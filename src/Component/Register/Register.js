@@ -4,7 +4,7 @@ import './Register.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { UserContext } from '../../App';
 import { useContext } from 'react';
 
@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const Register = (props) => {
-  const title = props.title;
-  console.log(title);
+const Register = () => {
+  const {title} = useParams();
+  console.log({title});
     const classes = useStyles();
     const [loggedInUser ] = useContext(UserContext);
 
@@ -34,12 +34,12 @@ const Register = (props) => {
                     <TextField id="standard-basic" value={loggedInUser.email} className="inputBox" />
                     <TextField id="standard-basic" required className="inputBox" label="Date" />
                     <TextField id="standard-basic" required className="inputBox" label="Description" />
-                    <TextField id="standard-basic" className="inputBox"/>
+                    <TextField id="standard-basic" className="inputBox" />
                     <Button variant="contained" color="primary" className="registrationBtn">
                     <Link to='/events' className = 'regLink'>Registration</Link>
                     </Button>
                 </form>
-
+                <h4>{title}</h4>
             </div>
         </div>
     );
