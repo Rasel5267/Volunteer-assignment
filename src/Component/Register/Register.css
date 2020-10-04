@@ -1,0 +1,27 @@
+.register{
+    width: 700px;
+    margin: 20px auto;
+    text-align: center;
+}
+.registerForm{
+    margin: 25px auto;
+    width: 570px;
+    height: 450px;
+    background: #fff;
+    border: 1px solid #ABABAB;
+    border-radius: 5px;
+    padding-top: 30px;
+}
+.inputBox{
+    width: 461px !important;
+}
+.registrationBtn{
+    margin-top: 20px !important;
+    width: 461px !important;
+    background: #3F90FC !important;
+    outline: none !important;
+}
+.regLink{
+    text-decoration: none !important;
+    color: #FFFFFF !important;
+}

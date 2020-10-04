@@ -1,0 +1,27 @@
+.logo{
+    width: 203px !important; 
+    height: 60px !important;
+}
+.btn{
+    margin-left: 10px !important;
+}
+.link{
+    text-decoration: none !important;
+    color: #000 !important;
+}
+.regBtn{
+    color: #fff !important;
+    margin-right: 20px !important;
+    padding: 10px 16px;
+    border-radius: 5px !important;
+    background-color: #3F90FC !important;
+}
+.adminBtn{
+    background: #434141 !important;
+    color: #fff !important;
+    padding: 10px 16px;
+    border-radius: 5px !important;
+}
+.adminBtn:hover, .regBtn:hover{
+    color: rgb(199, 199, 199) !important;
+}

@@ -1,0 +1,29 @@
+img{
+    width: 258px !important;
+    height: 193px;
+}
+.row{
+    overflow:hidden;
+}
+.box{
+    height: 268px;
+    width: 260px !important;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px !important;
+    transition: 0.3s;
+}
+.box:hover{
+    box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253);
+}
+.title{
+    color: #000 !important;
+}
+.searchBar{
+    width: 700px;
+    margin:30px auto;
+    text-align: center;
+}
+#search{
+    margin: 0 auto !important;
+}

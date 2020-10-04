@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+.logIn{
+    width: 700px;
+    margin: 20px auto;
+    text-align: center;
+}
+.logInForm{
+    margin: 40px auto;
+    width: 570px;
+    height: 400px;
+    background: #fff;
+    border: 1px solid #ABABAB;
+    border-radius: 5px;
+}
+.logInMethod{
+    width: 457px;
+    height: 148px;
+    margin: 130px auto;
+}
+.logInBtn{
+    width: 457px;
+    border: 1px solid #ABABAB;
+    border-radius: 30px;
+    margin-top: 15px;
+    padding: 5px;
+    background: #fff; 
+}
+.logInBtn span{
+    margin: 0 100px;
+}
+.google{
+    width: 23px !important;
+    height: 23px;
+}
+.createAccountBtn{
+    margin-top: 10px;
+}
