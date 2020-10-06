@@ -29,7 +29,7 @@ const Register = () => {
 
   const handleAddNewEvent = () => {
     const newAddedEvent = {...loggedInUser, ...newReg};
-    fetch('http://localhost:5000/newEvent',{
+    fetch('https://young-badlands-50477.herokuapp.com/newEvent',{
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(newAddedEvent)

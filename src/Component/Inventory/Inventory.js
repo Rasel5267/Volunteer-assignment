@@ -4,7 +4,7 @@ import fakeData from '../fakeData/eventData';
 
 const Inventory = () => {
     const handleAddEvent = () => {
-        fetch('http://localhost:5000/addEvent', {
+        fetch('https://young-badlands-50477.herokuapp.com/addEvent', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(fakeData)

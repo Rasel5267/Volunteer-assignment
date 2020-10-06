@@ -10,7 +10,7 @@ const Events = () => {
     const [loggedInUser] = useContext(UserContext);
 
     useEffect(() =>{
-        fetch('http://localhost:5000/addEvents?email='+loggedInUser.email,{
+        fetch('https://young-badlands-50477.herokuapp.com/addEvents?email='+loggedInUser.email,{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ const Events = () => {
     },[])
 
     const handleCancel = (id) => {
-        fetch(`http://localhost:5000/deleteEvent/${id}`, {
+        fetch(`https://young-badlands-50477.herokuapp.com/deleteEvent/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

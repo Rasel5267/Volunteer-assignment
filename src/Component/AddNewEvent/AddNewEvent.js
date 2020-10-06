@@ -16,7 +16,7 @@ const AddNewEvent = () => {
 
     const handleAddEvent = () => {
         const newAddedEvent = {...loggedInUser, ...newEvent};
-        fetch('http://localhost:5000/addNewEvent',{
+        fetch('https://young-badlands-50477.herokuapp.com/addNewEvent',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(newAddedEvent)

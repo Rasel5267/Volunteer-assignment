@@ -8,14 +8,14 @@ const VolunteerRegList = () => {
     const [regList, setRegList] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:5000/allEventList')
+        fetch('https://young-badlands-50477.herokuapp.com/allEventList')
         .then(res => res.json())
         .then(data => setRegList(data))
     },[])
 
     const handleDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/deleteEvent/${id}`, {
+        fetch(`https://young-badlands-50477.herokuapp.com/deleteEvent/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

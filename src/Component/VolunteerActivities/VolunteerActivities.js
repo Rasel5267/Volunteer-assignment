@@ -53,7 +53,7 @@ const VolunteerActivities = () => {
     const classes = useStyles();
     const [event, setEvent] = useState([]);
     useEffect( () => {
-        fetch('http://localhost:5000/events')
+        fetch('https://young-badlands-50477.herokuapp.com/events')
         .then(res => res.json())
         .then(data => setEvent(data))
         
