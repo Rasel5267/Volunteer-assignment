@@ -1,0 +1,33 @@
+.VolunteerRegList{
+    margin: 50px 40px;
+}
+.list-row{
+    width: 100%;
+}
+.volunteerList{
+    color: #207FEE;
+}
+.fa-plus, .fa-user-friends{
+    margin-right: 5px;
+}
+th, td{
+    font-size: 14px;
+}
+.fa-trash-alt{
+    background: #FF444A;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    padding-left: 1px;
+    line-height: 30px;
+    border-radius: 5px;
+}
+.listItem{
+    background: #fff;
+}
+.regList{
+    background: #F4F7FC;
+    padding: 25px 15px;
+    border-radius: 10px;
+    text-align: center;
+}

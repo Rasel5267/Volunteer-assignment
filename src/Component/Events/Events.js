@@ -1,24 +1,54 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Events.css';
+import cardImg from '../../logos/extraVolunteer.png';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { UserContext } from '../../App';
 
 const Events = () => {
+    const [eventList, setEventList] = useState([]);
+    const [loggedInUser] = useContext(UserContext);
+
+    useEffect(() =>{
+        fetch('http://localhost:5000/addEvents?email='+loggedInUser.email,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                authorization: `Bearer ${sessionStorage.getItem('token')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => setEventList(data))
+    },[])
+
+    const handleCancel = (id) => {
+        fetch(`http://localhost:5000/deleteEvent/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data)
+            })
+    };
+
     return (
         <div className="container">
-            <div className="col-md-6 ">
-                <div className="col-md-4 user-dtl">
-                    <div className ="card text-center">
-                        <div className="overflow">
-                            <img src="" alt=""/>
-                        </div>
-                        <div className="card-body txt-dark">
-                            <div className="card-title">Event Title</div>
-                            <div className="card-text text-secondary">
-                                <p>Country: Date</p>
-                                <button className="btn btn-outline-success">Cancel</button>
+            <div className="userEvent-list row justify-content-between">
+                {
+                    eventList.map(newEvent =>
+                        <div className="eventCard col-md-5.5">
+                            <div className="cardImg">
+                                <img className="img" src={cardImg} alt="img"/>
+                            </div>
+                            <div className="body">
+                                <h6>{newEvent.inputEventTitle}</h6>
+                                <p>{newEvent.date}</p>
+                                <button onClick={() =>handleCancel(`${newEvent._id}`)} className="cancelBtn">Cancel</button>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    )
+                }
             </div>
         </div>
     );

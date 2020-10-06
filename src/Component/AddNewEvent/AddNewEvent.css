@@ -1,0 +1,29 @@
+.addNewEvent{
+    margin: 50px 40px;
+}
+.newEventList{
+    color: #207FEE;
+}
+.sec-title{
+    margin-left: 20px;
+}
+.newEventSec{
+    background: #F4F7FC;
+    padding: 25px 15px;
+    border-radius: 10px;
+    text-align: center;
+    height: 400px;
+}
+.newEventForm{
+    background: #fff;
+    padding: 30px 15px;
+    text-align: left;
+    border-radius: 10px;
+}
+Label{
+    margin-top: 10px;
+}
+.submitBtn{
+    text-align: right;
+    margin-top: 15px;
+}

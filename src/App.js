@@ -2,13 +2,14 @@ import React, { createContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Component/Home/Home';
-import Donation from './Component/Donation/Donation';
 import Events from './Component/Events/Events';
 import LogIn from './Component/LogIn/LogIn';
 import Register from './Component/Register/Register';
 import { useState } from 'react';
 import PrivetRoute from './Component/PrivateRoute/PrivetRoute';
 import Header from './Component/Header/Header';
+import VolunteerRegList from './Component/VolunteerRegiList/VolunteerRegList';
+import AddNewEvent from './Component/AddNewEvent/AddNewEvent';
 
 
 export const UserContext = createContext();
@@ -23,15 +24,18 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/donation">
-              <Donation />
-            </Route>
+            <PrivetRoute path="/addNewEvent">
+              <AddNewEvent />
+            </PrivetRoute>
             <Route path="/event">
               <Events />
             </Route>
               <Route path="/logIn">
                 <LogIn />
               </Route>
+              <PrivetRoute path="/volunteerList">
+                <VolunteerRegList />
+              </PrivetRoute>
               <PrivetRoute path="/register">
                 <Register />
               </PrivetRoute>

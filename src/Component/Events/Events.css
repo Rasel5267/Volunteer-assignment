@@ -1,0 +1,39 @@
+.userEvent-list{
+    display: flex;
+    justify-content: space-between;
+}
+.eventCard{
+    background: #fff;
+    margin-top: 50px;
+    width: 48%;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    border-radius: 10px;
+}
+.cardImg{
+    width: 200px;
+    float: left;
+}
+.img{
+    max-width: 194px;
+    height: 150px;
+    border-radius: 15px;
+    margin: 25px 0;
+    padding-left: 15px; 
+}
+.body{
+    width: 340px;
+    float: right;
+    padding: 25px 10px;
+}
+.cancelBtn {
+    background: #E3E3E3;
+    color: #787878;
+    border: none;
+    outline: none;
+    padding: 10px 28px;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-left: 200px;
+}

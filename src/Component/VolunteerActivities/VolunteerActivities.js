@@ -5,7 +5,7 @@ import './VolunteerActivities.css';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { makeStyles } from '@material-ui/core/styles';
-import { useHistory } from 'react-router-dom';
+import NewEventByAdmin from '../NewEventByAdmin/NewEventByAdmin';
 
 const useStyles = makeStyles((theme) => ({
     search: {
@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
       }
   }));
 
+
 const VolunteerActivities = () => {
     const classes = useStyles();
     const [event, setEvent] = useState([]);
@@ -55,14 +56,8 @@ const VolunteerActivities = () => {
         fetch('http://localhost:5000/events')
         .then(res => res.json())
         .then(data => setEvent(data))
+        
     },[])
-    
-    const history = useHistory()
-    const handleAddEvent = (title) => {
-      console.log(title);
-      history.push(`/register/${title}`);
-    }
-
     return (
         <div className="container">
             <div className="searchBar">
@@ -87,11 +82,12 @@ const VolunteerActivities = () => {
                         <Card  className = "box">
                             <Card.Img variant="top" src={event.pic} />
                             <Card.Body>
-                                <Card.Title><Link to='/register' onClick={() =>handleAddEvent(event.title)} className = "title link">{event.title}</Link></Card.Title>
+                                <Card.Title><Link to='/register' className = "title link">{event.title}</Link></Card.Title>
                             </Card.Body>
                         </Card>
                     </div>
                 )}
+                <NewEventByAdmin />
             </div>
         </div>
     );

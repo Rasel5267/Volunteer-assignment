@@ -35,11 +35,21 @@ const LogIn = () => {
             } 
             setUser(signedInUser);
             setLoggedInUser(signedInUser);
-            history.replace(from);
-          }).catch(function(error) {
+            storeAuthToken();
+        }).catch(function(error) {
             const errorMessage = error.message;
             console.log(errorMessage);
-          });
+        });
+    }
+
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(true)
+        .then(function(idToken) {
+            sessionStorage.setItem('token', idToken);
+            history.replace(from);
+        }).catch(function(error) {
+            //Handle error
+        });
     }
 
     return (

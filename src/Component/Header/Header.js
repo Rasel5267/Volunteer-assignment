@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import {Link} from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import { NavDropdown } from 'react-bootstrap';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +28,10 @@ const Header = () => {
 
     if(loggedInUser.email){
         buttons = (
-            <ul className="navbar-nav">
-                <li className="nav-item">{loggedInUser.name}</li>
-            </ul>
+            <NavDropdown title={loggedInUser.name} id="basic-nav-dropdown" >
+                <NavDropdown.Item href="#action/3.1"><Link to="/volunteerList" className = "link">Go to Admin</Link></NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Log Out</NavDropdown.Item>
+            </NavDropdown>
         )
     }
     else{
@@ -37,7 +39,7 @@ const Header = () => {
             <ul className="navbar-nav menuBtn">
                 <li className="nav-item">
                     <Link to="/Login" className = "regBtn link">Register</Link>
-                    <Link to="/Login" className = "adminBtn link">Admin</Link>
+                    <Link to="/volunteerList" className = "adminBtn link">Admin</Link>
                 </li>
             </ul>
         )
