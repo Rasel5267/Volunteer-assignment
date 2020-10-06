@@ -62,7 +62,7 @@ const Register = () => {
                     <TextField name="description" onChange={onChangeEvent} value={newReg.description} required className="inputBox" label="Set Description"/>
                     <TextField name="inputEventTitle" onChange={onChangeEvent} value={newReg.inputEventTitle} className="inputBox" label="What Event you want to work"/>
                     <Button variant="contained" color="primary" className="registrationBtn">
-                      <Link onClick={handleAddNewEvent} to='/home' className = 'regLink'>Registration</Link>
+                      <Link onClick={handleAddNewEvent} to='/event' className = 'regLink'>Registration</Link>
                     </Button>
                 </form>
             </div>
