@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Headers.css';
 import logo from '../../logos/Group 1329.png';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,6 +9,9 @@ import {Link} from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 import { NavDropdown } from 'react-bootstrap';
+import * as firebase from "firebase/app";
+import "firebase/analytics";
+import "firebase/auth";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,15 +25,35 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
-    const [loggedInUser] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [user, setUser] = useState({
+        isSignedIn: false,
+        name: '',
+        email: ''
+    })
 
     let buttons;
+
+    const handleSignOut = () => {
+        firebase.auth().signOut()
+        .then(res => {
+            const signOutUser = {
+                isSignedIn: false,
+                name: '',
+                email: ''
+            }
+            setUser(signOutUser);
+            setLoggedInUser(signOutUser);
+          }).catch(function(error) {
+            // An error happened.
+          });
+    }
 
     if(loggedInUser.email){
         buttons = (
             <NavDropdown title={loggedInUser.name} id="basic-nav-dropdown" >
-                <NavDropdown.Item href="#action/3.1"><Link to="/volunteerList" className = "link">Go to Admin</Link></NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Log Out</NavDropdown.Item>
+                <NavDropdown.Item><Link to="/volunteerList" className = "link">Go to Admin</Link></NavDropdown.Item>
+                <NavDropdown.Item onClick={handleSignOut}>Log Out</NavDropdown.Item>
             </NavDropdown>
         )
     }

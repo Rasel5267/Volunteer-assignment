@@ -17,7 +17,7 @@ const LogIn = () => {
         isSignedIn: false,
         name: '',
         email: ''
-    }) 
+    })
 
     const [loggedInUser ,setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
