@@ -51,6 +51,7 @@ const Header = () => {
 
     if(loggedInUser.email){
         buttons = (
+
             <NavDropdown title={loggedInUser.name} id="basic-nav-dropdown" >
                 <NavDropdown.Item><Link to="/volunteerList" className = "link">Go to Admin</Link></NavDropdown.Item>
                 <NavDropdown.Item onClick={handleSignOut}>Log Out</NavDropdown.Item>
