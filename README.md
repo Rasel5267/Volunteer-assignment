@@ -7,15 +7,10 @@
 ## Project Details
 
 - Here a user can choose any event and register as a volunteer.
-
-- Users can see there Activities and register volunteer Services.
-
+- Users can see their Activities and register for volunteer Services.
 - Admin can create new Volunteer Activities.
-
-- Admin can See all the volunteer lists.
-
-- New Volunteer Activities also show in Volunteer Activities Section.
-
+- Admin can see all the volunteer lists.
+- New Volunteer Activities also show in the Volunteer Activities Section.
 - Admin can delete existing Volunteer Activities.
 
 ### Technology :
